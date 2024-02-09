@@ -18,3 +18,10 @@ model User {
 
   name String
 }
+
+model Movie {
+  id        Int    @id @default(autoincrement())
+  title     String
+  genre     String
+  releaseYear Int
+}
