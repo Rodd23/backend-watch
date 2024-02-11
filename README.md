@@ -55,11 +55,27 @@ GET /movie?page=1&pageSize=8: Usa o método GET para buscar todos os filmes com 
 A única rota pública é a de login; as demais exigem um token de autenticação.
 
 <h2>Para relizar o login inicial:</h2>
-http://localhost:3000/login
+POST -> http://localhost:3000/login
 
 {
 	"email": "rodrigo@email.com",
 	"password": "Abc@123"
+}
+
+<h2>Para cadastrar um usuário:</h2>
+POST - http://localhost:3000/user
+{
+	"email": "mateus@email.com",
+	"password": "Abc@123",
+	"name": "Mateus"
+}
+
+<h2>Para cadastrar um filme</h2>
+POST - http://localhost:3000/movie
+{
+	"title": "Teste",
+	"genre": "Ação, Aventura, Drama",
+	"releaseYear": 2024
 }
 
 <p>Certifique-se de ajustar as configurações conforme necessário e boa execução!</p>
