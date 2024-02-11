@@ -54,4 +54,12 @@ GET /movie?page=1&pageSize=8: Usa o método GET para buscar todos os filmes com 
 
 A única rota pública é a de login; as demais exigem um token de autenticação.
 
+<h2>Para relizar o login inicial:</h2>
+http://localhost:3000/login
+
+{
+	"email": "rodrigo@email.com",
+	"password": "Abc@123"
+}
+
 <p>Certifique-se de ajustar as configurações conforme necessário e boa execução!</p>
