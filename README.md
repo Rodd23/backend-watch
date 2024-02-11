@@ -1,73 +1,57 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Teste de Programação 
+<h1>Este é o guia para configurar e executar o backend do projeto de teste para a vaga de Desenvolvedor. Certifique-se de seguir os passos abaixo para configurar o ambiente e executar a aplicação.
+</h1>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<h2>Este projeto é uma aplicação desenvolvida com o NestJS, utilizando o Prisma como ORM (Object-Relational Mapping), e o banco de dados utilizado é o SQLite. A aplicação apresenta um fluxo de autenticação completo, permitindo aos usuários autenticarem-se de forma segura. Além disso, o projeto conta com operações de CRUD (Create, Read, Update, Delete) tanto para usuários quanto para filmes.</h2>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+<h2>Tecnologias Utilizadas:</h2>
+<p>NestJS: Framework para construção de aplicativos server-side usando Node.js.</p>
+<p>Prisma: ORM (Object-Relational Mapping) moderno para comunicação com o banco de dados.</p>
+<p>SQLite: Banco de dados relacional leve e eficiente, utilizado para armazenar os dados da aplicação</p>
 
-## Description
+<h2>Instalação</h2>
+ <p>1. Clone o repositório para o seu ambiente local:</p>
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+<p>2. Navegue até a pasta do projeto:</p>
+<p>cd nomedapasta</p>
 
-## Installation
+<h2>Instale as dependências do projeto:</h2>
+<p>npm install</p>
 
-```bash
-$ npm install
-```
+<h2>Execução da Aplicação</h2>
+<p>1. No terminal, execute o seguinte comando para iniciar a aplicação:</p>
+    npm run start:dev
+<p>A aplicação estará disponível em http://localhost:3000.</p>
 
-## Running the app
+<h2>Oberservações:</h2>
+<p>Atualizei o repositório com o arquivo .env, facilitando o preenchimento dos campos JWT_SECRET e DATABASE_URL, configurações essenciais para o correto funcionamento do banco de dados.</p>
 
-```bash
-# development
-$ npm run start
+<h2>Rotas no servidor</h2>
 
-# watch mode
-$ npm run start:dev
+POST /login: Rota de login. No corpo da requisição, envie o email e a senha do usuário.
 
-# production mode
-$ npm run start:prod
-```
+GET /user/:id: Rota para buscar um usuário por ID.
 
-## Test
+PATCH /user/:id: Usa o método PATCH para atualizar o usuário. No corpo da requisição, envie o email e o nome do usuário.
 
-```bash
-# unit tests
-$ npm run test
+POST /user: Usa o método POST para criar um usuário. No corpo da requisição, envie os campos de email, senha e nome.
 
-# e2e tests
-$ npm run test:e2e
+DELETE /user/:id: Usa o método DELETE para deletar um usuário.
 
-# test coverage
-$ npm run test:cov
-```
+GET /user?page=1&pageSize=8: Usa o método GET para buscar todos os usuários com paginação e quantidade de itens por página.
 
-## Support
+GET /me: Usa o método GET para buscar o usuário logado.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+POST /movie: Usa o método POST para criar um filme. No corpo da requisição, envie o título, gênero e ano de lançamento do filme.
 
-## Stay in touch
+GET /movie/:id: Usa o método GET para buscar um filme por ID.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+PATCH /movie/:id: Usa o método PATCH para atualizar um filme. No corpo da requisição, envie o título, gênero e ano de lançamento do filme.
 
-## License
+DELETE /movie/:id: Usa o método DELETE para deletar um filme.
 
-Nest is [MIT licensed](LICENSE).
+GET /movie?page=1&pageSize=8: Usa o método GET para buscar todos os filmes com paginação e quantidade de itens por página.
+
+A única rota pública é a de login; as demais exigem um token de autenticação.
+
+<p>Certifique-se de ajustar as configurações conforme necessário e boa execução!</p>
